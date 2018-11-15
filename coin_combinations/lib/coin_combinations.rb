@@ -1,6 +1,10 @@
 require('pry')
 
 class Coins
+  def initialize()
+    @coin_array = []
+  end
+
   def combo(amount)
     penny_amount = 1
     nickel_amount = 5
@@ -30,6 +34,10 @@ class Coins
         amount -= penny_amount
       end
     end
-    [pennies, nickels, dimes, quarters, dollars]
+    @coin_array = [pennies, nickels, dimes, quarters, dollars]
+  end
+
+  def print_coins()
+    puts "You got #{@coin_array[4]} dollars, #{@coin_array[3]} quarter, #{@coin_array[2]} dimes, #{@coin_array[1]} nickels, and #{@coin_array[0]} pennies"
   end
 end
