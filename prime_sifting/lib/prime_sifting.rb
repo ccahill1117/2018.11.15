@@ -28,18 +28,11 @@ class Primes
     values[1] = 0
     current_prime = 2
 
-    values = cross_out(current_prime, values)
-    current_prime = find_next_prime(current_prime, values)
-    if current_prime > 0
+    until current_prime == 0
       values = cross_out(current_prime, values)
       current_prime = find_next_prime(current_prime, values)
-      if current_prime > 0
-        values = cross_out(current_prime, values)
-      end
     end
-    # binding.pry
 
-    values
-    # values.select {|v| v > 0}
+    values.select {|v| v > 0}
   end
 end
